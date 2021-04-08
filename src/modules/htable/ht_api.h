@@ -55,6 +55,8 @@ typedef struct _ht_entry
 
 #define HT_MAX_COLS 8
 #define HT_EVEX_NAME_SIZE	64
+#define HT_FLAG_DB_SYNC   (1<<0)
+#define HT_FLAG_DB_NOLOAD (1<<1)
 
 typedef struct _ht
 {

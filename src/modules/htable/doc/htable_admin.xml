@@ -379,10 +379,11 @@ $ kamcmd htable.dump htable
 		</listitem>
 		<listitem>
 		<para>
-			<emphasis>dbmode</emphasis> - if set to 1, the content of hash
+			<emphasis>dbmode</emphasis> - if set to 1 or 3, the content of hash
 			table is written to database table when the SIP server is stopped
-			(i.e., ensure persistency over restarts). Default value is 0 (no
-			write back to db table).
+			(i.e., ensure persistency over restarts). If set to 2 or 3, the hash
+			table is not loaded on startup and will need to be loaded via RPC.
+			Default value is 0 (no write back to db table and load on startup).
 		</para>
 		</listitem>
 		<listitem>

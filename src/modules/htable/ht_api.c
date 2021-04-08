@@ -1049,7 +1049,7 @@ int ht_db_load_tables(void)
 	ht = _ht_root;
 	while(ht)
 	{
-		if(ht->dbtable.len>0)
+		if(ht->dbtable.len>0 && (ht->dbmode & HT_FLAG_DB_NOLOAD) == 0)
 		{
 			LM_DBG("loading db table [%.*s] in ht [%.*s]\n",
 					ht->dbtable.len, ht->dbtable.s,
@@ -1069,7 +1069,7 @@ int ht_db_sync_tables(void)
 	ht = _ht_root;
 	while(ht)
 	{
-		if(ht->dbtable.len>0 && ht->dbmode!=0 && ht->ncols==0)
+		if(ht->dbtable.len>0 && (ht->dbmode & HT_FLAG_DB_SYNC) !=0 && ht->ncols==0)
 		{
 			LM_DBG("sync db table [%.*s] from ht [%.*s]\n",
 					ht->dbtable.len, ht->dbtable.s,

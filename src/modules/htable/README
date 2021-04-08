@@ -463,10 +463,11 @@ $ kamcmd htable.dump htable
        transformation {s.select,...} can be used in configuration file to
        extract a specific column value). When cols attribute is present,
        writing back to database table is disabled.
-     * dbmode - if set to 1, the content of hash table is written to
+     * dbmode - if set to 1 or 3, the content of hash table is written to
        database table when the SIP server is stopped (i.e., ensure
-       persistency over restarts). Default value is 0 (no write back to db
-       table).
+       persistency over restarts). If set to 2 or 3, the hash table is not
+       loaded on startup and will need to be loaded via RPC. Default value
+       is 0 (no write back to db table and load on startup).
      * initval - the integer value to be returned instead of $null when a
        requested key is not set.
      * updateexpire - if set to 1 (default), the time until expiration of
