@@ -117,24 +117,6 @@ modparam("nosip", "msg_skip", "^GET ")
 			Event route block to be executed when a non-sip message is received
 			by a SIP worker process.
 		</para>
-		<para>
-		The routename parameter can be a static string or a dynamic string
-		value with config variables.
-		</para>
-		<para>
-		The sleep parameter represent the number of seconds to suspend the
-		processing of a SIP request. Maximum value is 100. The parameter can be
-		a static integer or a variable holding an integer.
-		</para>
-		<para>
-		Since the SIP request handling is resumed in another process,
-		the config file execution state is practically lost. Therefore beware
-		that the execution of config after resume will end once the
-		route[routename] is finished.
-		</para>
-		<para>
-		This function can be used from REQUEST_ROUTE.
-		</para>
 		<example>
 		<title><function>event_route[nosip:msg]</function> usage</title>
 		<programlisting format="linespecific">
